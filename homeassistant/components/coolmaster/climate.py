@@ -124,6 +124,9 @@ class CoolmasterClimate(CoordinatorEntity, ClimateEntity):
         if not is_on:
             return HVAC_MODE_OFF
 
+	    if mode == 'hot':
+		    mode = 'heat'
+        
         return CM_TO_HA_STATE[mode]
 
     @property
